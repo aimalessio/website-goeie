@@ -1,0 +1,9 @@
+.page-2 {
+    height: 50%;
+    width: 100%;
+    background-color: rgb(12, 12, 12); /* Zorg ervoor dat deze kleur overeenkomt met de SVG */
+    position: relative;
+    z-index: 1;
+    padding-top: 90px;
+}
+
