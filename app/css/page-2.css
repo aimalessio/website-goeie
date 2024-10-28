@@ -1,18 +1,20 @@
 .page-2 {
     height: 50%;
     width: 100%;
-    background-color: rgb(12, 12, 12); /* Zorg ervoor dat deze kleur overeenkomt met de SVG */
+    background-color: rgb(12, 12, 12);
     position: relative;
     z-index: 1;
     padding-top: 90px;
+    overflow: hidden;
 }
+
+
 
 .page-2 h1 {
     font-family: 'Arial', Sans-serif;
     font-size: 4em;
     text-align: center;
     position: absolute;
-    top: 10%;
     left: 10%;
     transform: translate(-50%, -50%);
     color: transparent;
@@ -26,19 +28,27 @@
     position: absolute;
     text-align: center;
     top: 30%;
-    left: 40%;
+    left: 50%;
     width: 40%;
     color: white;
-    line-height: 1.5; /* Verhoog de line-height voor betere leesbaarheid */
+    line-height: 1.5;
     padding: 10px 20px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: translateX(-50%);
+    white-space: normal;
 }
 
-.page-2 p .first-line { 
-    color: rgb(255, 255, 255); /* Pas de kleur aan naar wens */
-    font-weight: bold;
-    font-size: 1.1em;
+.typewriter {
+    display: inline;
+    border-right: 2px solid rgba(255, 255, 255, 0.75);
+    animation: blink-cursor 0.7s step-end infinite;
 }
 
+.first-line {
+    display: inline;
+    text-indent: 20px; /* Inspringing voor de eerste regel */
+    color: rgb(255, 255, 255);
+    font-weight: bold; /* Maakt de tekst dikgedrukt */
+}
