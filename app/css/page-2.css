@@ -33,17 +33,35 @@
     color: white;
     line-height: 1.5;
     padding: 10px 20px;
-    background-color: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
+    background-repeat: no-repeat;
+    background-size: 0 100%;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border: 1px solid white;
     transform: translateX(-50%);
     white-space: normal;
+}
+
+.page-2 p.animate {
+    animation: backgroundFill 2s ease-out forwards; /* Start de achtergrondanimatie */
+    animation-delay: 0.5s; /* Vertraging van 0.5 seconden */
+}
+
+@keyframes backgroundFill {
+    from {
+        background-size: 0 100%;
+    }
+    to {
+        background-size: 100% 100%;
+    }
 }
 
 .typewriter {
     display: inline;
     border-right: 2px solid rgba(255, 255, 255, 0.75);
     animation: blink-cursor 0.7s step-end infinite;
+    opacity: 0; /* Verberg standaard */
+    transition: opacity 0.3s ease; /* Vloeiende overgang wanneer zichtbaar gemaakt */
 }
 
 .first-line {
