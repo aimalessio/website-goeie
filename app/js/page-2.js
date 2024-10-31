@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const typewriterElement = document.querySelector(".typewriter");
     const firstLineElement = document.querySelector(".first-line");
     const textElement = document.querySelector(".page-2 p");
+    const img = document.querySelector('.page-2 img');
     const fullText = "Mijn naam is Alessio Sanna. Ik ben 18 jaar en studeer Software Development aan het Drenthe College. Ik ben rustig en gemotiveerd, en ga altijd voor het beste resultaat, in mijn studie én daarbuiten. Sport is belangrijk voor me; ik train zes keer per week om mijn doelen te halen. Of het nu om code gaat of om sporten, ik geef altijd alles.";
 
     const firstLine = "Mijn naam is Alessio Sanna.";
@@ -18,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
             setTimeout(typeWriter, 50);
         } else if (firstLineIndex === firstLine.length) {
             typingFirstLine = false;
+            img.classList.add('show'); // Toon de afbeelding zodra de eerste regel volledig is getypt
             firstLineIndex++;
             typewriterElement.innerHTML += "<br>";
             setTimeout(typeWriter, 50);
@@ -53,4 +55,25 @@ document.addEventListener("DOMContentLoaded", function() {
     }, observerOptions);
 
     observer.observe(page2);
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const img = document.querySelector('.page-2 img');
+    const text = document.getElementById('text');
+
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.type === 'childList' && mutation.target.textContent.trim().length > 0) {
+                img.classList.add('show');
+                observer.disconnect();
+            }
+        });
+    });
+
+    observer.observe(text, { childList: true, subtree: true });
+
+    // Simulate typing for demonstration purposes
+    setTimeout(() => {
+        text.textContent = 'First line typed';
+    }, 2000);
 });
