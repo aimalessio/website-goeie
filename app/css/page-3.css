@@ -41,7 +41,7 @@
 }
 
 .animate-reverse {
-    animation: dash-reverse 2s linear forwards;
+    animation: dash-reverse 4s linear forwards;
 }
 
 @keyframes dash-reverse {
