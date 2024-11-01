@@ -21,6 +21,63 @@
     z-index: 1;
 }
 
+.cvbutton {
+    display: inline-flex;
+    align-items: center;
+    padding: 15px 25px;
+    font-family: Sans-serif;
+    font-size: 1.5em;
+    color: white;
+    background-color: transparent;
+    border: 2px solid white;
+    border-radius: 30px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    position: absolute;
+    top: 80%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    overflow: hidden;
+    transition: color 0.4s ease-in-out, opacity 1s ease-in-out;
+}
+
+.cvbutton::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    transition: left 0.8s ease-in-out;
+    z-index: -1;
+}
+
+.cvbutton svg {
+    margin-right: 8px;
+    fill: white; /* Default color */
+    transition: fill 0.4s ease-in-out;
+}
+
+.cvbutton:hover::before {
+    left: 0;
+}
+
+.cvbutton:hover svg {
+    fill: black; /* Hover color */
+}
+
+.cvbutton:hover {
+    color: black;
+}
+
+.cvbutton.visible {
+    opacity: 1; /* Maak zichtbaar bij het toevoegen van de klasse 'visible' */
+}
+    
+
 .page-2 img {
     position: absolute;
     z-index: 0;
@@ -30,7 +87,7 @@
     right: 10%;
     border-radius: 100px 160px 200px 100px;
     filter: grayscale(25%);
-    opacity: 0; 
+    opacity: 0;
 }
 
 .page-2 img.show {
