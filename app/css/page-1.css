@@ -69,7 +69,6 @@ body {
 
 .navbar-list li a:hover::after {
     width: 75%;
-    /* Pas de breedte aan zoals gewenst */
     left: 50%;
 }
 
