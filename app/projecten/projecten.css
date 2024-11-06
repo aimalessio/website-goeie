@@ -9,10 +9,29 @@ html, body {
     background: transparent;
 }
 
+.svg-link {
+    position: absolute;
+    top: 55px; 
+    left: 50px; 
+    z-index: 2; 
+    transition: transform 0.3s ease;
+}
+
+.left-arrow {
+    width: 100%;
+    height: auto;
+}
+
+.svg-link:hover {
+      transform: scale(1) translateX(-20px); /* Beweeg bij hover naar links om het rechterdeel zichtbaar te maken */
+}
+
+
 .line-container {
     display: flex;
     justify-content: center;
-    margin-top: -60vh; 
+    position: relative; 
+    top: -23vh;
     z-index: 2;
 }
 
@@ -63,6 +82,50 @@ html, body {
     z-index: 1;
 }
 
+/* Positioneer de knoppen-container */
+.button-container {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    margin-top: -80px; 
+}
+
+.image-button {
+    width: 450px; /* Zorg dat de container iets smaller is dan de afbeelding */
+    height: 270px;
+    overflow: hidden; 
+    border-radius: 7px;
+    position: relative;
+    border-color: rgb(255, 255, 255);
+    border-width: 9px;
+    border-style:double;
+}
+
+.image-button img {
+    width: 500px; /* Breder dan de container om de linker kant te croppen */
+    height: 100%;
+    transform: translateX(-20px); /* Verschuif iets naar links zodat het linkerdeel wordt weggecropt */
+    transition: transform 0.3s ease; /* Soepele overgang bij hover */
+}
+
+.image-button img:hover {
+    transform: translateX(0); /* Breng de afbeelding terug naar rechts om het linkerdeel te laten zien */
+}
+
+.image-text {
+    position: absolute;
+    font-family: sans-serif;
+    bottom: 25px;
+    left: 25%;
+    transform: translateX(-50%);
+    color: white;
+    font-size: 1.5em;
+    padding: 5px 10px;
+    text-align: center;
+    width: calc(100% - 20px);
+    pointer-events: none; /* Zorg ervoor dat de tekst geen muisinteracties ontvangt */
+}
+
 
 
 .page-1-footer {
@@ -84,7 +147,7 @@ html, body {
 .animated-path {
     stroke-dasharray: 100;
     stroke-dashoffset: 100;
-    animation: dash 4s linear forwards;
+    animation: dash 7s linear forwards;
 }
 
 @keyframes dash {
