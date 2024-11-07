@@ -26,6 +26,32 @@ html, body {
       transform: scale(1) translateX(-20px); /* Beweeg bij hover naar links om het rechterdeel zichtbaar te maken */
 }
 
+.wave-text {
+    display: inline-block;
+    position: relative;
+    font-size: 8em;
+    color: transparent;
+    -webkit-text-stroke-width: 0.7px;
+    -webkit-text-stroke-color: white;
+    overflow: hidden;
+}
+
+.wave-text span {
+    display: inline-block;
+    position: relative;
+    transform: translateY(100%);
+    animation: wave 1s forwards;
+}
+
+@keyframes wave {
+    0% {
+        transform: translateY(100%);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
 
 .line-container {
     display: flex;
@@ -94,22 +120,32 @@ html, body {
     width: 490px; 
     height: 280px;
     overflow: hidden; 
-    border-radius: 60px;
+    border-radius: 35px;
     position: relative;
     border-color: rgb(255, 255, 255);
     border-width: 7px;
     border-style:double;
+    opacity: 0;
+    transform: translateY(100%);
+    transition: opacity 1s, transform 1s;
 }
+
+.image-button.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.image-button img:hover {
+    transform: translateX(0);
+}
+
 
 .image-button img {
     width: 510px; 
     height: 100%;
     transform: translateX(-20px); 
     transition: transform 0.3s ease; 
-}
-
-.image-button img:hover {
-    transform: translateX(0);
+    z-index: 2;
 }
 
 .image-text {
