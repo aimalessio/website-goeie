@@ -221,6 +221,13 @@ html, body {
     height: 8%;
 }
 
+#overlayImage {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px;
+}
+
 .close-btn {
     position: absolute;
     top: 20px;

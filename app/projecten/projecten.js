@@ -30,8 +30,9 @@ document.addEventListener('DOMContentLoaded', () => {
         image.addEventListener('click', () => {
             // Stel de afbeelding en de afmetingen in voor elke individuele afbeelding
             overlayImage.src = image.src;
-            overlayImage.style.width = `${image.dataset.width}px`;
-            overlayImage.style.height = `${image.dataset.height}px`;
+            overlayImage.style.width = `${image.dataset.width}%`;
+            overlayImage.style.height = `${image.dataset.height}%`;
+            overlayImage.style.top = image.dataset.top || '0px'; // Zet hoogte op basis van data-top
 
             // Toon de overlay
             overlay.style.display = 'flex';
