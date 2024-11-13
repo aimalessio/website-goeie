@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const text = waveText.textContent;
     waveText.innerHTML = '';
 
-    // H1-animatie (letter-voor-letter effect)
     text.split('').forEach((char, index) => {
         const span = document.createElement('span');
         span.textContent = char;
@@ -11,48 +10,50 @@ document.addEventListener('DOMContentLoaded', () => {
         waveText.appendChild(span);
     });
 
-    const totalAnimationTime = text.length * 0.1 + 0.3; // Totale animatietijd berekenen
+    const totalAnimationTime = text.length * 0.1 + 0.3;
 
-    // Start de button-animatie na de h1-animatie
     setTimeout(() => {
         const imageButtons = document.querySelectorAll('.image-button');
         imageButtons.forEach((button, index) => {
             setTimeout(() => {
                 button.classList.add('animate');
-            }, index * 100); // Stapsgewijs vertragen per button
+            }, index * 100);
         });
     }, totalAnimationTime * 1000);
 
-    // Selecteer de benodigde elementen
     const imageButtons = document.querySelectorAll('.image-button img');
     const overlay = document.getElementById('overlay');
+    const overlayImage = document.getElementById('overlayImage');
     const closeBtn = document.getElementById('close-btn');
 
-    // Voeg klik event toe aan elke afbeelding om overlay te openen
     imageButtons.forEach(image => {
         image.addEventListener('click', () => {
-            overlay.style.display = 'flex'; // Zet overlay zichtbaar
+            // Stel de afbeelding en de afmetingen in voor elke individuele afbeelding
+            overlayImage.src = image.src;
+            overlayImage.style.width = `${image.dataset.width}px`;
+            overlayImage.style.height = `${image.dataset.height}px`;
+
+            // Toon de overlay
+            overlay.style.display = 'flex';
             setTimeout(() => {
-                overlay.classList.add('active'); // Voeg de 'active' klasse toe voor animatie
-            }, 10); // Korte vertraging om CSS-transitie te starten
+                overlay.classList.add('active');
+            }, 10);
         });
     });
 
-    // Sluit de overlay wanneer de sluitknop wordt aangeklikt
     closeBtn.addEventListener('click', () => {
-        overlay.classList.remove('active'); // Verwijder 'active' klasse voor fade-out animatie
+        overlay.classList.remove('active');
         setTimeout(() => {
-            overlay.style.display = 'none'; // Zet overlay display naar 'none' na animatie
-        }, 500); // Wacht tot de animatie klaar is
+            overlay.style.display = 'none';
+        }, 500);
     });
 
-    // Sluit de overlay wanneer buiten de overlay-content wordt geklikt
     overlay.addEventListener('click', (event) => {
         if (event.target === overlay) {
-            overlay.classList.remove('active'); // Verwijder 'active' klasse
+            overlay.classList.remove('active');
             setTimeout(() => {
                 overlay.style.display = 'none';
-            }, 500); // Wacht tot de animatie klaar is
+            }, 500);
         }
     });
 });
