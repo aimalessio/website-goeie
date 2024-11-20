@@ -191,6 +191,7 @@ html, body {
     top: 0%;
     width: 85%;
     height: 90%;
+    flex-direction: column; 
     background-color: rgba(0, 0, 0, 1);
     display: flex; 
     justify-content: center;
@@ -231,7 +232,7 @@ html, body {
 
 .overlay-text {
     position: absolute;
-    bottom: 80px; /* Plaats de tekst boven de knop */
+    bottom: 20px; /* Plaats de tekst aan de onderkant van de overlay */
     left: 50%;
     transform: translateX(-50%);
     color: white;
@@ -244,7 +245,7 @@ html, body {
 
 .overlay-button {
     position: absolute;
-    bottom: 15px;
+    bottom: 300px;
     left: 50%;
     transform: translateX(-50%);
     background-color: transparent;
