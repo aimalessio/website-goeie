@@ -23,7 +23,7 @@ html, body {
 }
 
 .svg-link:hover {
-      transform: scale(1) translateX(-20px); /* Beweeg bij hover naar links om het rechterdeel zichtbaar te maken */
+      transform: scale(1) translateX(-20px);
 }
 
 .wave-text {
@@ -51,7 +51,6 @@ html, body {
         transform: translateY(0);
     }
 }
-
 
 .line-container {
     display: flex;
@@ -108,7 +107,6 @@ html, body {
     z-index: 1;
 }
 
-
 .button-container {
     display: flex;
     justify-content: center;
@@ -139,7 +137,6 @@ html, body {
     transform: translateX(0);
 }
 
-
 .image-button img {
     width: 510px; 
     height: 100%;
@@ -161,123 +158,6 @@ html, body {
     width: calc(100% - 20px);
     pointer-events: none; 
 }
-
-/* Toevoegen van animatie aan overlay */
-.overlay {
-    position: fixed; 
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    backdrop-filter: blur(5px);
-    display: none;
-    justify-content: center;
-    align-items: center;
-    z-index: 5;
-    opacity: 0; /* Start onzichtbaar */
-    transform: scale(0.8) translateY(50px); /* Startpositie */
-    transition: opacity 0.5s ease, transform 0.5s ease; /* Smooth animatie */
-}
-
-/* Actief laten worden van overlay animatie */
-.overlay.active {
-    display: flex;
-    opacity: 1;
-    transform: scale(1) translateY(0); /* Eindpositie: volledig zichtbaar en gecentreerd */
-}
-
-.overlay-content {
-    position: fixed;
-    top: 0%;
-    width: 85%;
-    height: 90%;
-    flex-direction: column; 
-    background-color: rgba(0, 0, 0, 1);
-    display: flex; 
-    justify-content: center;
-    align-items: center;
-    border-radius: 30px;
-    border-color: rgb(255, 255, 255);
-    border-width: 3px;
-    border-style: groove;
-    z-index: 3;
-    padding: 20px;
-    color: rgb(252, 255, 255);
-    text-align: center;
-    position: relative;
-}
-
-.overlay-content .image-container {
-    display: flex; 
-    justify-content: flex-start; 
-    align-items: flex-end; 
-    gap: 15px; 
-    position: absolute;
-    bottom: 25px; 
-    left: 30px; 
-}
-
-.overlay-content img {
-    width: 8%;
-    height: 8%;
-}
-
-#overlayImage {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 15px;
-    mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1.0) 50%, transparent 100%);
-}
-
-.overlay-text {
-    position: absolute;
-    bottom: 20px; /* Plaats de tekst aan de onderkant van de overlay */
-    left: 50%;
-    transform: translateX(-50%);
-    color: white;
-    font-size: 1.5em;
-    padding: 10px;
-    max-width: 80%;
-    text-align: center;
-}
-
-
-.overlay-button {
-    position: absolute;
-    bottom: 300px;
-    left: 50%;
-    transform: translateX(-50%);
-    background-color: transparent;
-    border: 2px solid white;
-    color: white;
-    font-size: 1.2em;
-    padding: 10px 20px;
-    border-radius: 10px;
-    cursor: pointer;
-    opacity: 0.8;
-    transition: opacity 0.3s ease;
-}
-
-.overlay-button:hover {
-    opacity: 1;
-}
-
-
-
-.close-btn {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 40px;
-    cursor: pointer;
-    color: white;
-}
-
-.close-btn:hover {
-    color: rgb(255, 0, 0);
-}
-
 
 .page-1-footer {
     position: absolute;
@@ -306,6 +186,3 @@ html, body {
         stroke-dashoffset: 0;
     }
 }
-
-
-

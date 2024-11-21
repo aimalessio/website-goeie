@@ -20,41 +20,17 @@ document.addEventListener('DOMContentLoaded', () => {
             }, index * 100);
         });
     }, totalAnimationTime * 1000);
+});
 
-    const imageButtons = document.querySelectorAll('.image-button img');
-    const overlay = document.getElementById('overlay');
-    const overlayImage = document.getElementById('overlayImage');
-    const closeBtn = document.getElementById('close-btn');
+document.addEventListener("DOMContentLoaded", function() {
+    const imageButtons = document.querySelectorAll(".image-button");
 
-    imageButtons.forEach(image => {
-        image.addEventListener('click', () => {
-            // Stel de afbeelding en de afmetingen in voor elke individuele afbeelding
-            overlayImage.src = image.src;
-            overlayImage.style.width = `${image.dataset.width}%`;
-            overlayImage.style.height = `${image.dataset.height}%`;
-            overlayImage.style.top = image.dataset.top || '0px'; // Zet hoogte op basis van data-top
-
-            // Toon de overlay
-            overlay.style.display = 'flex';
-            setTimeout(() => {
-                overlay.classList.add('active');
-            }, 10);
+    imageButtons.forEach(button => {
+        button.addEventListener("click", function() {
+            const url = button.getAttribute("data-url");
+            if (url) {
+                window.location.href = url;
+            }
         });
-    });
-
-    closeBtn.addEventListener('click', () => {
-        overlay.classList.remove('active');
-        setTimeout(() => {
-            overlay.style.display = 'none';
-        }, 500);
-    });
-
-    overlay.addEventListener('click', (event) => {
-        if (event.target === overlay) {
-            overlay.classList.remove('active');
-            setTimeout(() => {
-                overlay.style.display = 'none';
-            }, 500);
-        }
     });
 });
