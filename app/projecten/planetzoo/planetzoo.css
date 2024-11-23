@@ -43,9 +43,6 @@ html, body {
     color: white;
     z-index: 10; 
     text-align: center;
-    width: 100%; 
-   bottom: 10%; 
-   font-size: sans-serif;
 }
 
 .button {
@@ -86,9 +83,6 @@ html, body {
     color: white;
     z-index: 3; 
     text-align: center;
-    width: 100%; 
-    bottom: -10%; 
-    font-size: sans-serif;
 }
 
 
@@ -97,6 +91,7 @@ html, body {
     width: 80%;
     background-image: url('../media/bg_zebra.svg');
     background-color: #10815c;
+    font-family: sans-serif;
     object-fit: cover;
     position: absolute;
     top: 105%;
