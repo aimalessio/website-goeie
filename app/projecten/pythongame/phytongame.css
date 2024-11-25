@@ -1,0 +1,26 @@
+html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+
+
+.main {
+    width: 100%;
+    height: 140vh; 
+    background-image: url('../media/backgroundpython.png'); 
+    background-repeat: repeat;
+    background-size: cover; 
+    background-position: center; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+}
