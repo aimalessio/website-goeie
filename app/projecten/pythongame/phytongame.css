@@ -16,11 +16,124 @@ html, body {
     height: 140vh; 
     background-image: url('../media/backgroundpython.png'); 
     background-repeat: repeat;
+   display: flex;
     background-size: cover; 
     background-position: center; 
-    display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
 
+}
+
+.pijltje {
+    position: absolute;
+    top: 5%;
+    left: 3%;
+    width: 30px;
+    height: auto;
+    transition: transform 0.3s ease;
+}
+
+.pijltje-svg {
+    fill: transparent;
+    transform: rotate(90deg);
+}
+
+
+.pijltje:hover {
+    transform: translateX(-30px);
+}
+
+.pythonimage {
+    height: 65%;
+    object-fit: cover;
+    position: absolute;
+    top: 35%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid yellow;
+    border-radius: 30px;
+    box-shadow: 10px 10px 30px blue;
+}
+
+
+
+@keyframes blink {
+    0% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.button {
+    font-size: 2.5em;
+    padding: 20px 20px;
+    text-shadow: 0 0 10px #009ac1;
+    color: #daf6ff;
+    text-align: center;
+    font-family: sans-serif;
+    -webkit-text-stroke-color:blue;
+    -webkit-text-stroke-width: 1px;
+    font-weight: bold;
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-top: 5%;
+    animation: blink 1s steps(1, end) infinite;
+}
+
+.button:hover {
+    transform: scale(1.1);
+}
+
+.border { 
+    height: 55%;
+    width: 80%;
+    background-color: rgba(0, 0, 0, 0.7);
+    position: absolute;
+    font-family: sans-serif;
+    top: 108%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border: 4px solid yellow;
+    border-radius: 30px;
+    box-shadow: 20px 25px 20px blue;
+}
+
+.h2 {
+    font-size: 2em;
+    color: white;
+    text-align: center;
+    margin-top: 60px; /* Verhoog de waarde om de h2 meer naar beneden te verplaatsen */
+}
+
+.h1 {
+    font-size: 4.5em;
+    color:transparent;
+    -webkit-text-stroke-color: yellow;
+    -webkit-text-stroke-width: 1px;
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Voeg de nieuwe klasse toe */
+.pixelify-sans-heading {
+    font-family: "Pixelify Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 600; /* Gebruik een waarde van 400 tot 700 */
+    font-style: normal;
+}
+
+/* Voeg de nieuwe klasse toe aan h1 en h2 */
+.h1.pixelify-sans-heading,
+.h2.pixelify-sans-heading {
+    font-family: "Pixelify Sans", serif;
+    font-optical-sizing: auto;
+    font-weight: 600; /* Gebruik een waarde van 400 tot 700 */
+    font-style: normal;
 }
