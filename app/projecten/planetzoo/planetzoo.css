@@ -26,41 +26,39 @@ html, body {
     align-items: center;
 }
 
+/* Voeg de animatie toe aan de img */
 .planetzoo {
     height: 60%;
     object-fit: cover;
     position: absolute;
-    top: 35%;
+    top: -100%; /* Begin buiten het scherm */
     left: 50%;
     transform: translate(-50%, -50%);
     border: 4px solid rgb(255, 255, 255);
     border-radius: 30px;
     box-shadow: 10px 10px 20px rgba(136, 136, 136, 0.5);
+    animation: slideInFromTop 1s forwards; /* Voeg de animatie toe */
 }
 
-.h1 {
-    font-size: 4em;
-    color: white;
-    z-index: 10; 
-    text-align: center;
-}
-
+/* Voeg de animatie toe aan de button */
 .button {
-    padding: 10px 20px;
-    font-size: 2em;
-    color: white;
-    background-color:#ffc107;
-    border-radius: 30px;
+    font-size: 2.5em;
+    padding: 20px 20px;
+    text-shadow: 0 0 10px #009ac1;
+    color: #daf6ff;
     text-align: center;
+    font-family: sans-serif;
     text-decoration: none;
-    z-index: 2;
-    font-weight: bold;
-    transition: background-color 0.3s ease;
-    margin-top: 3%;
+    display: inline-block;
+    transition: transform 0.3s ease;
+    margin-top: 50px;
+    opacity: 0; /* Begin met onzichtbaar */
+    animation: fadeIn 1s forwards 1s; /* Voeg de animatie toe met een vertraging */
 }
 
 .button:hover {
-    background-color: #ff9800;
+    transform: scale(1.2);
+    filter: drop-shadow(0 0 10px #000000);
 }
 
 .line-container {
@@ -85,7 +83,7 @@ html, body {
     text-align: center;
 }
 
-
+/* Voeg de animatie toe aan de border */
 .border { 
     height: 45%;
     width: 80%;
@@ -94,15 +92,11 @@ html, body {
     font-family: sans-serif;
     object-fit: cover;
     position: absolute;
-    top: 105%;
+    bottom: -100%; /* Begin buiten het scherm */
     left: 50%;
-    transform: translate(-50%, -50%);
-    border: 4px solid rgb(255, 255, 255);
-    border-radius: 30px;
-    box-shadow: 10px 10px 20px rgba(136, 136, 136, 0.5);
+    transform: translateX(-50%);
+    animation: slideInFromBottom 1s forwards 2s; /* Voeg de animatie toe met een vertraging */
 }
-
-
 
 .pijltje {
     position: absolute;
@@ -118,18 +112,25 @@ html, body {
     transform: rotate(90deg);
 }
 
-
 .pijltje:hover {
     transform: translateX(-30px);
 }
 
+/* Definieer de keyframes voor de animaties */
+@keyframes slideInFromTop {
+    to {
+        top: 35%; /* Eindpositie */
+    }
+}
 
+@keyframes fadeIn {
+    to {
+        opacity: 1; /* Eindpositie */
+    }
+}
 
-
-
-
-
-
-
-
-
+@keyframes slideInFromBottom {
+    to {
+        bottom: 10%; /* Eindpositie */
+    }
+}
