@@ -31,7 +31,7 @@ html, body {
     height: 60%;
     object-fit: cover;
     position: absolute;
-    top: -100%; /* Begin buiten het scherm */
+    top: -50%; /* Begin buiten het scherm */
     left: 50%;
     transform: translate(-50%, -50%);
     border: 4px solid rgb(255, 255, 255);
@@ -43,9 +43,11 @@ html, body {
 /* Voeg de animatie toe aan de button */
 .button {
     font-size: 2.5em;
-    padding: 20px 20px;
-    text-shadow: 0 0 10px #009ac1;
-    color: #daf6ff;
+    padding: 10px 20px;
+    font-size: 2em;
+    color: white;
+    background-color:#ffc107;
+    border-radius: 30px;
     text-align: center;
     font-family: sans-serif;
     text-decoration: none;
@@ -54,11 +56,11 @@ html, body {
     margin-top: 50px;
     opacity: 0; /* Begin met onzichtbaar */
     animation: fadeIn 1s forwards 1s; /* Voeg de animatie toe met een vertraging */
+    overflow: hidden;
 }
 
 .button:hover {
-    transform: scale(1.2);
-    filter: drop-shadow(0 0 10px #000000);
+    background-color: #ff9800;
 }
 
 .line-container {
@@ -76,6 +78,13 @@ html, body {
     z-index: 2;
 }
 
+.h1 {
+    font-size: 4em;
+    color: white;
+    z-index: 10; 
+    text-align: center;
+}
+
 .h2 {
     font-size: 2em;
     color: white;
@@ -89,13 +98,17 @@ html, body {
     width: 80%;
     background-image: url('../media/bg_zebra.svg');
     background-color: #10815c;
+    transform: translate(-50%, -50%);
+    border: 4px solid rgb(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: 10px 10px 20px rgba(136, 136, 136, 0.5);
     font-family: sans-serif;
     object-fit: cover;
     position: absolute;
-    bottom: -100%; /* Begin buiten het scherm */
+    bottom: -100%; 
     left: 50%;
     transform: translateX(-50%);
-    animation: slideInFromBottom 1s forwards 2s; /* Voeg de animatie toe met een vertraging */
+    animation: slideInFromBottom 1s forwards 2s;
 }
 
 .pijltje {
@@ -131,6 +144,6 @@ html, body {
 
 @keyframes slideInFromBottom {
     to {
-        bottom: 10%; /* Eindpositie */
+        bottom: -30%; /* Eindpositie */
     }
 }
