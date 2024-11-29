@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
     margin: 0;
     padding: 0;
 }
@@ -9,44 +10,44 @@ html, body {
 }
 
 #bg_zebra {
-    background-image:url('../media/bg_zebra.svg'); 
-    background-position: center; 
+    background-image: url('../media/bg_zebra.svg');
+    background-position: center;
 
 }
 
 #body {
     width: 100%;
-    height: 140vh; 
-    background-image: url('../media/background.jpg'); 
+    height: 140vh;
+    background-image: url('../media/background.jpg');
     background-repeat: repeat;
-    background-size: cover; 
-    background-position: center; 
+    background-size: cover;
+    background-position: center;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-/* Voeg de animatie toe aan de img */
+
 .planetzoo {
     height: 60%;
     object-fit: cover;
     position: absolute;
-    top: -50%; /* Begin buiten het scherm */
+    top: -50%;
     left: 50%;
     transform: translate(-50%, -50%);
     border: 4px solid rgb(255, 255, 255);
     border-radius: 30px;
     box-shadow: 10px 10px 20px rgba(136, 136, 136, 0.5);
-    animation: slideInFromTop 1s forwards; /* Voeg de animatie toe */
+    animation: slideInFromTop 1s forwards;
 }
 
-/* Voeg de animatie toe aan de button */
+
 .button {
     font-size: 2.5em;
     padding: 10px 20px;
     font-size: 2em;
     color: white;
-    background-color:#ffc107;
+    background-color: #ffc107;
     border-radius: 30px;
     text-align: center;
     font-family: sans-serif;
@@ -54,8 +55,8 @@ html, body {
     display: inline-block;
     transition: transform 0.3s ease;
     margin-top: 50px;
-    opacity: 0; /* Begin met onzichtbaar */
-    animation: fadeIn 1s forwards 1s; /* Voeg de animatie toe met een vertraging */
+    opacity: 0;
+    animation: fadeIn 1s forwards 1s;
     overflow: hidden;
 }
 
@@ -66,7 +67,7 @@ html, body {
 .line-container {
     display: flex;
     justify-content: center;
-    position: relative; 
+    position: relative;
     top: -23vh;
     z-index: 2;
 }
@@ -81,19 +82,18 @@ html, body {
 .h1 {
     font-size: 4em;
     color: white;
-    z-index: 10; 
+    z-index: 10;
     text-align: center;
 }
 
 .h2 {
     font-size: 2em;
     color: white;
-    z-index: 3; 
+    z-index: 3;
     text-align: center;
 }
 
-/* Voeg de animatie toe aan de border */
-.border { 
+.border {
     height: 45%;
     width: 80%;
     background-image: url('../media/bg_zebra.svg');
@@ -105,7 +105,7 @@ html, body {
     font-family: sans-serif;
     object-fit: cover;
     position: absolute;
-    bottom: -100%; 
+    bottom: -100%;
     left: 50%;
     transform: translateX(-50%);
     animation: slideInFromBottom 1s forwards 2s;
@@ -129,21 +129,21 @@ html, body {
     transform: translateX(-30px);
 }
 
-/* Definieer de keyframes voor de animaties */
+
 @keyframes slideInFromTop {
     to {
-        top: 35%; /* Eindpositie */
+        top: 35%;
     }
 }
 
 @keyframes fadeIn {
     to {
-        opacity: 1; /* Eindpositie */
+        opacity: 1;
     }
 }
 
 @keyframes slideInFromBottom {
     to {
-        bottom: -30%; /* Eindpositie */
+        bottom: -30%;
     }
 }

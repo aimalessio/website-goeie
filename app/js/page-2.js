@@ -1,4 +1,4 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const typewriterElement = document.querySelector(".typewriter");
     const firstLineElement = document.querySelector(".first-line");
     const textElement = document.querySelector(".page-2 p");
@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
             setTimeout(typeWriter, 50);
         } else if (firstLineIndex === firstLine.length) {
             typingFirstLine = false;
-            img.classList.add('show'); // Toon de afbeelding zodra de eerste regel volledig is getypt
+            img.classList.add('show');
             firstLineIndex++;
             typewriterElement.innerHTML += "<br>";
             setTimeout(typeWriter, 50);
@@ -30,26 +30,25 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     }
 
-    // Observer instellen voor page-2
     const page2 = document.getElementById("page-2");
     const observerOptions = {
-        root: null, // Gebruik de viewport als 'root'
-        threshold: 0.5 // Activeer als 50% zichtbaar is
+        root: null,
+        threshold: 0.5
     };
 
     const observer = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                textElement.classList.add("animate"); // Start de achtergrondkleur-animatie
+                textElement.classList.add("animate");
 
-                // Wacht tot de achtergrondanimatie voltooid is voordat de typemachine start
+
                 textElement.addEventListener("animationend", function onAnimationEnd() {
-                    typewriterElement.style.opacity = "1"; // Maak de typewriter zichtbaar
-                    typeWriter(); // Start de typemachine
-                    textElement.removeEventListener("animationend", onAnimationEnd); // Verwijder de listener om herhaling te voorkomen
+                    typewriterElement.style.opacity = "1";
+                    typeWriter();
+                    textElement.removeEventListener("animationend", onAnimationEnd);
                 });
 
-                observer.unobserve(page2); // Stop met observeren om animatie slechts één keer te activeren
+                observer.unobserve(page2);
             }
         });
     }, observerOptions);
@@ -57,12 +56,12 @@ document.addEventListener("DOMContentLoaded", function() {
     observer.observe(page2);
 });
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
     const img = document.querySelector('.page-2 img');
     const text = document.getElementById('text');
 
-    const observer = new MutationObserver(function(mutations) {
-        mutations.forEach(function(mutation) {
+    const observer = new MutationObserver(function (mutations) {
+        mutations.forEach(function (mutation) {
             if (mutation.type === 'childList' && mutation.target.textContent.trim().length > 0) {
                 img.classList.add('show');
                 observer.disconnect();
@@ -72,7 +71,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
     observer.observe(text, { childList: true, subtree: true });
 
-    // Simulate typing for demonstration purposes
     setTimeout(() => {
         text.textContent = 'First line typed';
     }, 2000);

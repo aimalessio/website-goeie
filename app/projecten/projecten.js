@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', () => {
     }, totalAnimationTime * 1000);
 });
 
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener("DOMContentLoaded", function () {
     const imageButtons = document.querySelectorAll(".image-button");
 
     imageButtons.forEach(button => {
-        button.addEventListener("click", function() {
+        button.addEventListener("click", function () {
             const url = button.getAttribute("data-url");
             if (url) {
                 window.location.href = url;

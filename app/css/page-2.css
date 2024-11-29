@@ -57,7 +57,7 @@
 
 .cvbutton svg {
     margin-right: 8px;
-    fill: white; /* Default color */
+    fill: white;
     transition: fill 0.4s ease-in-out;
 }
 
@@ -66,7 +66,7 @@
 }
 
 .cvbutton:hover svg {
-    fill: black; /* Hover color */
+    fill: black;
 }
 
 .cvbutton:hover {
@@ -74,9 +74,9 @@
 }
 
 .cvbutton.visible {
-    opacity: 1; /* Maak zichtbaar bij het toevoegen van de klasse 'visible' */
+    opacity: 1;
 }
-    
+
 
 .page-2 img {
     position: absolute;
@@ -106,7 +106,7 @@
     color: white;
     line-height: 1.5;
     padding: 10px 20px;
-    
+
     background: linear-gradient(to right, rgba(83, 83, 83, 0.1) 0%, rgba(255, 255, 255, 0.1) 100%);
     background-repeat: no-repeat;
     background-size: 0 100%;
@@ -116,14 +116,15 @@
 }
 
 .page-2 p.animate {
-    animation: backgroundFill 2s ease-out forwards; 
-    animation-delay: 0.5s; 
+    animation: backgroundFill 2s ease-out forwards;
+    animation-delay: 0.5s;
 }
 
 @keyframes backgroundFill {
     from {
         background-size: 0 100%;
     }
+
     to {
         background-size: 100% 100%;
     }
@@ -133,7 +134,8 @@
     display: inline;
     border-right: 2px solid rgba(255, 255, 255, 0.75);
     animation: blink-cursor 0.7s step-end infinite;
-    opacity: 0; /* Verberg de cursor */
+    opacity: 0;
+    /* Verberg de cursor */
     transition: opacity 0.3s ease;
 }
 
