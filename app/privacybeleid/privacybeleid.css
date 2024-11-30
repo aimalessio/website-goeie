@@ -1,0 +1,97 @@
+body,
+html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif; 
+}
+
+::-webkit-scrollbar {
+    width: 0px;
+    background: transparent;
+}
+
+.svg-link {
+    position: absolute;
+    top: 55px;
+    left: 50px;
+    z-index: 1;
+    transition: transform 0.3s ease;
+    z-index: 2;
+}
+
+.svg-link:hover {
+    transform: scale(1) translateX(-40px);
+}
+
+.privacybeleid {
+    height: 200vh;
+    width: 100%;
+    position: relative;
+    background-image: url('../media/page-3.jpg');
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: 1;
+}
+
+.privacybeleid::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); 
+    z-index: 0; 
+}
+
+.content {
+    position: relative;
+    z-index: 2;
+    max-width: 55%; 
+    margin: 0 auto; 
+    top: 2%;
+     padding: 20px 0;
+    border: 2px solid white;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+    background-color: rgba(109, 109, 109, 0.1); 
+    animation: borderAnimation 2s ease-in-out; 
+}
+
+
+h1 {
+    color: transparent;
+    font-size: 6em; 
+    text-align: center;
+    font-family: sans-serif;
+    margin: 0;
+    padding: 20px 0;
+    -webkit-text-stroke-color: rgb(255, 255, 255);
+    -webkit-text-stroke-width: 2px;
+}
+
+p {
+    color: white;
+    font-size: 1.4em; 
+    text-align: justify;
+    margin-bottom: 20px; 
+    line-height: 1.8; 
+    padding: 10px 15px;
+}
+
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+}
+
+.footer svg {
+    display: block;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 100px;
+}
