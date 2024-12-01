@@ -1,3 +1,4 @@
+
 .page-5 {
     height: 5%;
     width: 100%;
@@ -81,24 +82,14 @@
     text-decoration: none;
     font-size: 1.5em;
     position: relative;
+    transition: color 0.3s ease;
 }
 
-.voorwaarden a::after {
-    content: '';
-    position: absolute;
-    bottom: -5px;
-    left: 50%;
-    width: 0;
-    height: 2px;
-    background-color: white;
-    transition: width 0.5s, left 0.5s;
-    transform: translateX(-50%);
+.voorwaarden a:hover {
+    color: #616161; /* Verander de kleur naar een fellere kleur op hover */
 }
 
-.voorwaarden a:hover::after {
-    width: 100%;
-    left: 50%;
-}
+
 
 .github-link {
     text-decoration: none;
