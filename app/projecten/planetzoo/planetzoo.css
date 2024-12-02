@@ -2,6 +2,8 @@ html,
 body {
     margin: 0;
     padding: 0;
+    font-family: 'Roboto', sans-serif;
+    overflow-x: hidden; 
 }
 
 ::-webkit-scrollbar {
@@ -12,7 +14,6 @@ body {
 #bg_zebra {
     background-image: url('../media/bg_zebra.svg');
     background-position: center;
-
 }
 
 #body {
@@ -27,7 +28,6 @@ body {
     align-items: center;
 }
 
-
 .planetzoo {
     height: 60%;
     object-fit: cover;
@@ -40,7 +40,6 @@ body {
     box-shadow: 10px 10px 20px rgba(136, 136, 136, 0.5);
     animation: slideInFromTop 1s forwards;
 }
-
 
 .button {
     font-size: 2.5em;
@@ -105,10 +104,10 @@ body {
     font-family: sans-serif;
     object-fit: cover;
     position: absolute;
-    bottom: -100%;
+    top: -50%; 
     left: 50%;
-    transform: translateX(-50%);
-    animation: slideInFromBottom 1s forwards 2s;
+    transform: translate(-50%, -50%);
+    animation: slideInFromTopBorder 1s forwards 1.5s;
 }
 
 .pijltje {
@@ -129,21 +128,20 @@ body {
     transform: translateX(-30px);
 }
 
-
 @keyframes slideInFromTop {
     to {
-        top: 35%;
+        top: 35%; 
+    }
+}
+
+@keyframes slideInFromTopBorder {
+    to {
+        top: 107%; 
     }
 }
 
 @keyframes fadeIn {
     to {
         opacity: 1;
-    }
-}
-
-@keyframes slideInFromBottom {
-    to {
-        bottom: -30%;
     }
 }

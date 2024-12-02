@@ -8,7 +8,6 @@ html, body {
     background: transparent;
 }
 
-
 .body {
     width: 100%;
     height: 140vh; 
@@ -20,21 +19,20 @@ html, body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
 }
 
 .gamelibrary {
     height: 65%;
     object-fit: cover;
     position: absolute;
-    top: 35%;
+    top: -50%; /* Begin buiten het scherm */
     left: 50%;
     transform: translate(-50%, -50%);
     border: 4px solid rgb(255, 255, 255);
     border-radius: 30px;
     box-shadow: 20px 25px 15px rgba(0, 0, 0, 1);
+    animation: slideInFromTop 1s forwards; /* Voeg de animatie toe */
 }
-
 
 .button {
     font-size: 2.5em;
@@ -46,27 +44,30 @@ html, body {
     text-decoration: none;
     display: inline-block;
     transition: transform 0.3s ease;
-    margin-top: 5%;
+    margin-top: 50px;
+    opacity: 0;
+    animation: fadeIn 1s forwards 1s; /* Voeg de animatie toe */
 }
 
 .button:hover {
     transform: scale(1.2);
-    filter : drop-shadow(0 0 10px #000000);
 }
 
-.border { 
-    height: 50%;
+.border {
+    height: 55%;
     width: 80%;
     background-color: rgba(0, 0, 0, 0.7);
     position: absolute;
     font-family: sans-serif;
-    top: 108%;
+    top: -50%; /* Begin buiten het scherm */
     left: 50%;
     transform: translate(-50%, -50%);
     border: 4px solid rgb(255, 255, 255);
     border-radius: 30px;
     box-shadow: 20px 25px 20px rgba(0, 0, 0, 1);
+    animation: slideInFromTopBorder 1s forwards 1.5s; /* Voeg de animatie toe */
 }
+
 .h2 {
     font-size: 2em;
     color: white;
@@ -82,14 +83,13 @@ ul {
     max-width: 80%;
     color: white;
 }
+
 .h1 {
     font-size: 4em;
     text-shadow: #009ac1 5px 5px 10px;
     color: white;
     text-align: center;
 }
-
-
 
 .pijltje {
     position: absolute;
@@ -109,4 +109,22 @@ ul {
 
 .pijltje:hover {
     transform: translateX(-30px);
+}
+
+@keyframes slideInFromTop {
+    to {
+        top: 34%; /* Eindpositie */
+    }
+}
+
+@keyframes slideInFromTopBorder {
+    to {
+        top: 111%; /* Eindpositie voor de border */
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
 }
