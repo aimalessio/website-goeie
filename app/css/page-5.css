@@ -39,7 +39,7 @@
     padding: 4px;
     display: inline-block;
     overflow: hidden;
-    transition: color 1s ease-in-out, opacity 1s ease-in-out;
+    transition: color 0.3s ease, opacity 1s ease-in-out;
     position: relative;
 }
 
@@ -59,15 +59,10 @@
 
 .contact-phone:hover,
 .contact-email:hover {
+    color: #616161;
+    text-decoration: none; 
     opacity: 1;
 }
-
-.contact-phone:hover::after,
-.contact-email:hover::after {
-    width: 100%;
-    left: 50%;
-}
-
 
 .voorwaarden {
     display: flex;
@@ -86,7 +81,8 @@
 }
 
 .voorwaarden a:hover {
-    color: #616161; /* Verander de kleur naar een fellere kleur op hover */
+    color: #616161; 
+    text-decoration: none; 
 }
 
 
